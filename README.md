@@ -129,7 +129,7 @@ pip install --editable pynnacle
 
 ## Release History
 
-- v 0.1.0
+- v 1.0.0
   - Released and stable
 
 ## Meta

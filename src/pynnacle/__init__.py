@@ -3,6 +3,6 @@
 __title__ = "pynnacle"
 __author__ = "Stephen R A King"
 __description__ = "A utility class to simplify the sending of emails"
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __license__ = "MIT"
 __copyright__ = "Copyright 2022 Stephen R A King"
