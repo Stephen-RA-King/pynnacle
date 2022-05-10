@@ -1,53 +1,47 @@
-"""module docstring - short summary
-If the description is long, the first line should be a short summary that makes
-sense on its own, separated from the rest by a newline
-"""
+"""A utility class to simplify the sending of emails."""
 # Core Library modules
 import mimetypes
 import re
 import smtplib
 from email.message import EmailMessage
 from pathlib import Path
-from typing import Any
 
 
 class SendEmail:
     def __init__(
         self,
-        user_id: Any = None,
-        user_pass: Any = None,
-        smtp_server: Any = None,
-        smtp_port: int = 0,
-        smtp_encryption: str = "yes",
-        smtp_authentication: str = "yes",
+        user_id=None,
+        user_pass=None,
+        smtp_server=None,
+        smtp_port=None,
+        smtp_encryption="yes",
+        smtp_authentication="yes",
     ):
-        self._user_id: Any = user_id
-        self._user_pass: Any = user_pass
-        self._display_password: Any = None
-        self._display_id: Any = None
-
-        self._smtp_server: Any = smtp_server
-        self._smtp_port: int = smtp_port
-        self._smtp_encryption: str = smtp_encryption
-        self._smtp_authentication: str = smtp_authentication
-
-        self._test_sender: Any = None
-        self._test_recipient: Any = None
-        self._subject: Any = None
-        self._sender: Any = None
-        self._recipient: Any = None
-        self._cc: list = []
-        self._validated_cc: list = []
-        self._bcc: list = []
-        self._validated_bcc: list = []
-        self._body: Any = None
-        self._msg: Any = None
-        self._msg_test: Any = None
-        self._attachments: list = []
+        self._user_id = user_id
+        self._user_pass = user_pass
+        self._display_password = None
+        self._display_id = None
+        self._smtp_server = smtp_server
+        self._smtp_port = smtp_port
+        self._smtp_encryption = smtp_encryption
+        self._smtp_authentication = smtp_authentication
+        self._test_sender = None
+        self._test_recipient = None
+        self._subject = None
+        self._sender = None
+        self._recipient = None
+        self._cc = None
+        self._validated_cc = None
+        self._bcc = None
+        self._validated_bcc = None
+        self._body = None
+        self._msg = None
+        self._msg_test = None
+        self._attachments = None
         self._msg = EmailMessage()
 
     @staticmethod
-    def _validate_email(email: str) -> bool:
+    def _validate_email(email):
         _email_pattern = (
             r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:"
             r"[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -58,7 +52,7 @@ class SendEmail:
             print(f"email '{email}', is not properly formatted")
             return False
 
-    def _attach(self, file: Path) -> None:
+    def _attach(self, file):
         filename = file.name
         ctype, encoding = mimetypes.guess_type(file)
         if ctype is None or encoding is not None:
@@ -69,11 +63,11 @@ class SendEmail:
                 fp.read(), maintype=maintype, subtype=subtype, filename=filename
             )
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         if self._user_id:
             self._display_id = "************ (Configured)"
         else:
-            self._display_id = ""
+            self._display_id = None
         return f"""
             {self.__class__.__name__},
             User ID: {self._display_id!r},
@@ -89,13 +83,13 @@ class SendEmail:
 
     def smtp_set(
         self,
-        user_id: Any = None,
-        user_pass: Any = None,
-        smtp_server: Any = None,
-        smtp_port: int = 0,
-        smtp_encryption: str = "yes",
-        smtp_authentication: str = "yes",
-    ) -> None:
+        user_id=None,
+        user_pass=None,
+        smtp_server=None,
+        smtp_port=None,
+        smtp_encryption="yes",
+        smtp_authentication="yes",
+    ):
         if user_id:
             self._user_id = user_id
         if user_pass:
@@ -109,7 +103,7 @@ class SendEmail:
         if smtp_authentication:
             self._smtp_authentication = smtp_authentication
 
-    def smtp_get(self) -> str:
+    def smtp_get(self):
         if self._user_pass:
             self._display_password = "************ (Configured)"
         else:
@@ -128,7 +122,7 @@ class SendEmail:
             * = Required
             """
 
-    def smtp_test(self, sender: str, recipient: str) -> None:
+    def smtp_test(self, sender, recipient):
         self._msg_test = EmailMessage()
         if self._validate_email(sender):
             self._test_sender = sender
@@ -150,14 +144,14 @@ class SendEmail:
 
     def message_send(
         self,
-        subject: Any = None,
-        sender: Any = None,
-        recipient: Any = None,
-        cc: Any = None,
-        bcc: Any = None,
-        body: str = "",
-        attachments: Any = None,
-    ) -> None:
+        subject=None,
+        sender=None,
+        recipient=None,
+        cc=None,
+        bcc=None,
+        body=None,
+        attachments=None,
+    ):
         self._validated_cc = []
         self._validated_bcc = []
         if subject:
@@ -197,7 +191,7 @@ class SendEmail:
                 continue
         self._message_transmit(self._msg)
 
-    def message_get(self) -> str:
+    def message_get(self):
         return f"""
             c = Compulsory
             SUBJECT:(c) {self._subject },
@@ -208,11 +202,11 @@ class SendEmail:
             BODY:       {self._body}
         """
 
-    def message_clear(self) -> None:
+    def message_clear(self):
         if self._msg:
             self._msg.clear()
 
-    def _message_transmit(self, message: Any) -> None:
+    def _message_transmit(self, message):
         if not self._smtp_server or not self._smtp_port:
             print("Some SMTP server details are missing")
             print(self.smtp_get())

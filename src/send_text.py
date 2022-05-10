@@ -1,6 +1,5 @@
 # Core Library modules
 import configparser
-from typing import Any
 
 # Third party modules
 import keyring
@@ -40,9 +39,9 @@ subject = "Attention!! - There is a problem..."
 sender = user_id
 recipient = "stephen.ra.king@gmail.com"
 body = """Dear sir \n\nThis is another test"""
-cc: list = [Any]
-bcc: list = [Any]
-attachments: list = [Any]
+cc = []
+bcc = []
+attachments = [r"D:\PYTHON PROJECT\MY PROGS\EMAIL_TOOLS\send\files\cat.jpg"]
 
 
 # STEP 3 - Now send message ################
