@@ -30,13 +30,13 @@ pip install pynnacle
 Firstly import the module
 
 ```sh
-import pynnacle
+from pynnacle.pynnacle import SendEmail
 ```
 
 Then instantiate the class with the initialization arguments.
 
 ```sh
-mailer = pynnacle.SendEmail(
+mailer = SendEmail(
     user_id=user_id,
     user_pass=user_pass,
     smtp_server=server,
