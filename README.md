@@ -1,6 +1,6 @@
 # pynnacle
 
-> Short blurb about what your product does.
+> A utility class to simplify sending emails.
 
 [![pre-commit][pre-commit-image]][pre-commit-url]
 [![Imports: isort][isort-image]][isort-url]
@@ -8,8 +8,6 @@
 [![Checked with mypy][mypy-image]][mypy-url]
 [![security: bandit][bandit-image]][bandit-url]
 [![licence: mit][mit-license-image]][mit-license-url]
-
-One to two paragraph statement about your product and what it does.
 
 ![](https://github.com/Stephen-RA-King/pynnacle/raw/main/files/header.png)
 
@@ -29,7 +27,95 @@ pip install pynnacle
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Firstly import the module
+
+```sh
+import pynnacle
+```
+
+Then instantiate the class with the initialization arguments.
+
+```sh
+mailer = pynnacle.SendEmail(
+    user_id=user_id,
+    user_pass=user_pass,
+    smtp_server=server,
+    smtp_port=port,
+    smtp_authentication=auth,
+    smtp_encryption=encrypt,
+)
+```
+
+Then simply send the email
+
+```sh
+mailer.message_send(
+    subject="Hi There",
+    sender="sender@abc.com",
+    recipient="recipient@xyz.com",
+    body="This is where the text of the email body goes",
+)
+```
+
+cc, bcc and attachments arguments can also be used, supplied as lists
+
+```sh
+mailer.message_send(
+    subject="Hi There",
+    sender="sender@abc.com",
+    recipient="recipient@xyz.com",
+    body="This is where the text of the email body goes",
+    cc=["person1@def.com", "person2@ghi.com"],
+    bcc=["person3@jkl.com", "person4@mno.com"],
+    attachments=["path_to_file1", "path_to_file2"]
+)
+```
+
+## Further simplifications
+
+### Storing and Reusing SMTP
+
+Iy you have a requirement to use multiple SMTP servers then the settings can be stored in a config file:
+
+e.g.config.ini
+
+```sh
+[gmail]
+smtp_server = smtp.gmail.com
+smtp_port = 587
+smtp_authentication = yes
+smtp_encryption = yes
+pop3_server = pop.gmail.com
+pop3_port = 995
+pop3_authentication = yes
+pop3_encryption = yes
+```
+
+Then in your application simply specify the "service" and extract the required elements with the Python [configparser](https://docs.python.org/3/library/configparser.html) library.
+
+```sh
+import configparser
+
+service = "gmail"
+
+ini = configparser.ConfigParser()
+ini.read("config.ini")
+server = ini.get(service, "smtp_server")
+port = int(ini.get(service, "smtp_port"))
+auth = ini.get(service, "smtp_authentication")
+encrypt = ini.get(service, "smtp_encryption")
+```
+
+### Storing credentials
+
+To avoid hard-coding any credentials I use the Python [keyring](https://github.com/jaraco/keyring) library
+
+```sh
+service = "gmail"
+
+user_id = keyring.get_password(service, "service_id")
+user_pass = keyring.get_password(service, "service_password")
+```
 
 _For more examples and usage, please refer to the [Wiki][wiki]._
 
@@ -44,7 +130,7 @@ pip install --editable pynnacle
 ## Release History
 
 - v 0.1.0
-  - Work in progress
+  - Released and stable
 
 ## Meta
 
@@ -53,14 +139,6 @@ Stephen R A King : name@isp.com
 Distributed under the MIT License. See `LICENSE` for more information.
 
 [https://github.com/Stephen-RA-King/pynnacle](https://github.com/Stephen-RA-King/pynnacle)
-
-## Contributing
-
-1. Fork it (<https://github.com/Stephen-RA-King/pynnacle/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
 
