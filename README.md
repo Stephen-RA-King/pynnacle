@@ -127,18 +127,20 @@ Describe how to install all development dependencies and how to run an automated
 pip install --editable pynnacle
 ```
 
-## Release History
+## Documentation
 
-- v 1.0.0
-  - Released and stable
+[**Read the Docs**](https://pynnacle.readthedocs.io/en/latest/?)
 
 ## Meta
 
-Stephen R A King : name@isp.com
+[![](assets/linkedin.png)](https://linkedin.com/in/stephen-k-3a4644210)
+[![](assets/github.png)](https://github.com/Stephen-RA-King/Stephen-RA-King)
+[![](assets/www.png)](https://www.Stephen-RA-King)
+[![](assets/email.png)](mailto:stephen.ra.king@gmail.com)
+
+Author: Stephen R A King
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-[https://github.com/Stephen-RA-King/pynnacle](https://github.com/Stephen-RA-King/pynnacle)
 
 <!-- Markdown link & img dfn's -->
 
