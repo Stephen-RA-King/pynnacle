@@ -9,7 +9,7 @@
 [![security: bandit][bandit-image]][bandit-url]
 [![licence: mit][mit-license-image]][mit-license-url]
 
-![](https://github.com/Stephen-RA-King/pynnacle/raw/main/files/header.png)
+![](assets/header.png)
 
 ## Installation
 
