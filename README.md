@@ -2,6 +2,9 @@
 
 > A utility class to simplify sending emails.
 
+[![PyPI version](https://badge.fury.io/py/pynnacle.svg)](https://badge.fury.io/py/pynnacle)
+[![Documentation Status](https://readthedocs.org/projects/pynnacle/badge/?version=latest)](https://pynnacle.readthedocs.io/en/latest/?badge=latest)
+[![Downloads](https://static.pepy.tech/personalized-badge/pynnacle?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pynnacle)
 [![pre-commit][pre-commit-image]][pre-commit-url]
 [![Imports: isort][isort-image]][isort-url]
 [![Code style: black][black-image]][black-url]
@@ -135,6 +138,7 @@ pip install --editable pynnacle
 
 [![](assets/linkedin.png)](https://linkedin.com/in/stephen-k-3a4644210)
 [![](assets/github.png)](https://github.com/Stephen-RA-King/Stephen-RA-King)
+[![](assets/pypi.png)](https://pypi.org/project/pynnacle/)
 [![](assets/www.png)](https://www.Stephen-RA-King)
 [![](assets/email.png)](mailto:stephen.ra.king@gmail.com)
 
