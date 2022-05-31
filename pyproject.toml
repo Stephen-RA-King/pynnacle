@@ -9,7 +9,6 @@ build-backend = "setuptools.build_meta"
 [tool.black]
 line-length = 88
 
-
 [tool.pytest.ini_options]
 # https://docs.pytest.org/en/6.2.x/reference.html?highlight=minversion#configuration-options
 minversion = "6.0"
@@ -55,6 +54,18 @@ disallow_incomplete_defs = true
 follow_imports = "skip"
 html_report = "mypy-report"
 mypy_path = "typeshed/pyi:typeshed/imports"
+
+[tool.semantic_release]
+version_variable = "src/pynnacle/__init__.py:__version__"
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "python -m build"
+dist_path = "dist/"
+upload_to_pypi = true
+upload_to_repository = true
+remove_dist = true
+version_source = "tag"
+commit_message = "chore: generate by PSR"
 
 [tool.flakeheaven]
 # base = "https://raw.githubusercontent.com/flakeheaven/flakeheaven/main/pyproject.toml"

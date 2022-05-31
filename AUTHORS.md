@@ -1,15 +1,11 @@
----
-Credits
----
+# Credits
 
-# Development Lead
+## Development Lead
 
-- Stephen R A King \<name@isp.com\>
+- Stephen R A King \<stephen.ra.king@gmail.com\>
 
-# Maintainer
+## Maintainer
 
-- Stephen R A King \<name@isp.com\>
+- Stephen R A King \<stephen.ra.king@gmail.com\>
 
-# Contributors
-
-None yet. Why not be the first?
+## Contributors
