@@ -139,7 +139,7 @@ pip install --editable pynnacle
 [![](assets/linkedin.png)](https://linkedin.com/in/stephen-k-3a4644210)
 [![](assets/github.png)](https://github.com/Stephen-RA-King/Stephen-RA-King)
 [![](assets/pypi.png)](https://pypi.org/project/pynnacle/)
-[![](assets/www.png)](https://www.Stephen-RA-King)
+[![](assets/www.png)](https://www.justpython.tech)
 [![](assets/email.png)](mailto:stephen.ra.king@gmail.com)
 
 Author: Stephen R A King
