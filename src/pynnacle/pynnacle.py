@@ -6,17 +6,31 @@ import smtplib
 from email.message import EmailMessage
 from pathlib import Path
 
+# Local modules
+from . import ini_config, logger
+
 
 class SendEmail:
     def __init__(
         self,
+        service=None,
         user_id=None,
         user_pass=None,
         smtp_server=None,
         smtp_port=None,
         smtp_encryption="yes",
-        smtp_authentication="yes",
+        smtp_authentication: str = "yes",
     ):
+        if service != "custom":
+            try:
+                smtp_server = ini_config[service]["smtp_server"]
+                smtp_port = int(ini_config[service]["smtp_port"])
+                smtp_authentication = ini_config[service]["smtp_authentication"]
+                smtp_encryption = ini_config[service]["smtp_encryption"]
+            except KeyError:
+                logger.info(f"Service: {service} not in configuration")
+                exit(1)
+
         self._user_id = user_id
         self._user_pass = user_pass
         self._display_password = None
@@ -41,7 +55,7 @@ class SendEmail:
         self._msg = EmailMessage()
 
     @staticmethod
-    def _validate_email(email):
+    def _validate_email(email: str) -> bool:
         _email_pattern = (
             r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:"
             r"[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -49,7 +63,7 @@ class SendEmail:
         if isinstance(email, str) and re.search(_email_pattern, email):
             return True
         else:
-            print(f"email '{email}', is not properly formatted")
+            logger.info(f"email '{email}', is not properly formatted")
             return False
 
     def _attach(self, file):

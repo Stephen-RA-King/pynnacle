@@ -41,6 +41,7 @@ ensure_newline_before_comments = true
 balanced_wrapping = true
 combine_as_imports = true
 
+
 [tool.mypy]
 ignore_missing_imports = true
 check_untyped_defs = true
