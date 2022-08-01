@@ -51,7 +51,7 @@ ini_config = {section: dict(_ini.items(section)) for section in _ini.sections()}
 
 
 __title__ = "pynnacle"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __author__ = "Stephen R A King"
 __description__ = "Utiltiy wrapper class to leverage email transmission"
 __email__ = "stephen.ra.king@gmail.com"
