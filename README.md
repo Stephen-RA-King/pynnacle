@@ -176,7 +176,7 @@ pip install --editable pynnacle
 
 Stephen R A King : stephen.ra.king@gmail.com
 
-Distributed under the MIT license. See [license](license-url) for more information.
+Distributed under the MIT license. See [license][license-url] for more information.
 
 [https://github.com/Stephen-RA-King/pynnacle](https://github.com/Stephen-RA-King/pynnacle)
 
