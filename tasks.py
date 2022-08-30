@@ -24,7 +24,7 @@ DOCS_INDEX = "".join(['"', str(ROOT_DIR / "docs" / "_build" / "index.html"), '"'
 LOG_DIR = ROOT_DIR.joinpath("logs")
 TEST_DIR = ROOT_DIR.joinpath("tests")
 SRC_DIR = ROOT_DIR.joinpath("src")
-PKG_DIR = SRC_DIR.joinpath("pynnacle")
+PKG_DIR = SRC_DIR.joinpath("piptools_sync")
 PYTHON_FILES_ALL = list(ROOT_DIR.rglob("*.py"))
 PYTHON_FILES_ALL.remove(ROOT_DIR / "tasks.py")
 PYTHON_FILES_ALL_STR = ""
@@ -136,7 +136,7 @@ def _clean_build():
     ]
     # specify pathlib objects to exclude from deletion (can be directories of files)
     excludes = [
-        SRC_DIR / "pynnacle.egg-info/",
+        SRC_DIR / "piptools_sync.egg-info/",
     ]
     for pattern in patterns:
         _finder(ROOT_DIR, pattern, excludes)
@@ -356,7 +356,7 @@ def tests(c, open_browser=False):
     _clean_test()
     print(TEST_DIR)
     c.run(
-        f'pytest "{str(TEST_DIR)}" --cov=pynnacle --cov-report=html'
+        f'pytest "{str(TEST_DIR)}" --cov=piptools_sync --cov-report=html'
         f" --html=pytest-report.html -ra"
     )
     if open_browser:
@@ -414,9 +414,11 @@ def psr(c):
 @task
 def update(c):
     """Updates the development environment"""
+    c.run("pre-commit clean")
+    c.run("pre-commit gc")
     c.run("pre-commit autoupdate")
-    c.run("pip-compile requirements/base.in")
-    c.run("pip-compile requirements/development.in")
-    c.run("pip-compile requirements/production.in")
-    c.run("pip-compile requirements/test.in")
-    c.run("pip install -r requirements/development.txt")
+    c.run("pip-compile -q -r -U --allow-unsafe requirements/base.in")
+    c.run("pip-compile -q -r -U --allow-unsafe requirements/development.in")
+    c.run("pip-compile -q -r -U --allow-unsafe requirements/production.in")
+    c.run("pip-compile -q -r -U --allow-unsafe requirements/test.in")
+    c.run("pip-sync")
