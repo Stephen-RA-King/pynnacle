@@ -54,29 +54,29 @@ Firstly import the module
 from pynnacle.pynnacle import SendEmail
 ```
 
-Pynnacle stores the configuration of email servers in an 'ini' file.
-If a service is already configured then the main class can be instatiated with only 3 arguments as follows:
+Pynnacle stores the configuration of email servers in an 'ini' configuration file.
+If a service is already configured then the main class can be instantiated with only 3 arguments e.g.:
 
 ```sh
 mailer = SendEmail(
     service="gmail"
-    user_id=user_id,
-    user_pass=user_pass,
+    user_id="jsmith",
+    user_pass="P@zzw0rd1",
 )
 ```
 
-If the service hs not been configured, simple pass "custom" as the service and pass the other smtp arguments
-to the initializer as follows:
+If the service has not been configured, simply pass "custom" as the service and pass the other smtp arguments
+to the initializer e.g.:
 
 ```sh
 mailer = SendEmail(
     service="custom"
-    user_id=user_id,
-    user_pass=user_pass,
-    smtp_server=server,
-    smtp_port=port,
-    smtp_authentication=auth,
-    smtp_encryption=encrypt,
+    user_id="jsmith",
+    user_pass="P@zzw0rd1",
+    smtp_server="smtp.abc.com",
+    smtp_port=25,
+    smtp_authentication="yes",
+    smtp_encryption="yes",
 )
 ```
 
@@ -150,14 +150,6 @@ The application now has to be assigned a 16 byte code which can be configured fr
 - 4 click "App password" to generate the key
 
 Then simply use this along with the account email address to authenticate
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-pip install --editable pynnacle
-```
 
 ## Documentation
 
