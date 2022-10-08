@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.1 (2022-10-08)
+
+
 ## v1.1.0 (2022-10-08)
 ### Documentation
 * Fix spellings in readme ([`7a764a5`](https://github.com/Stephen-RA-King/pynnacle/commit/7a764a5b1214d55dadb0ecbf763933691031a68d))
