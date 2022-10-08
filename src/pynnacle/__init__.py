@@ -8,6 +8,14 @@ from importlib import resources
 # Third party modules
 import yaml  # type: ignore
 
+__title__ = "pynnacle"
+__version__ = "1.0.2"
+__author__ = "Stephen R A King"
+__description__ = "Utiltiy wrapper class to leverage email transmission"
+__email__ = "stephen.ra.king@gmail.com"
+__license__ = "MIT"
+__copyright__ = "Copyright 2022 Stephen R A King"
+
 LOGGING_CONFIG = """
 version: 1
 disable_existing_loggers: False
@@ -48,12 +56,3 @@ _ini = configparser.ConfigParser()
 _ini.optionxform = str  # type: ignore
 _ini.read_string(_ini_text)
 ini_config = {section: dict(_ini.items(section)) for section in _ini.sections()}
-
-
-__title__ = "pynnacle"
-__version__ = "1.0.2"
-__author__ = "Stephen R A King"
-__description__ = "Utiltiy wrapper class to leverage email transmission"
-__email__ = "stephen.ra.king@gmail.com"
-__license__ = "MIT"
-__copyright__ = "Copyright 2022 Stephen R A King"
