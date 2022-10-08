@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.0 (2022-10-08)
+### Documentation
+* Fix spellings in readme ([`7a764a5`](https://github.com/Stephen-RA-King/pynnacle/commit/7a764a5b1214d55dadb0ecbf763933691031a68d))
+* Fix markdown link ([`b9d8c93`](https://github.com/Stephen-RA-King/pynnacle/commit/b9d8c93f77ea9934ee37162eda612a85867acece))
+
 ## v1.0.2 (2022-08-01)
 ### Fix
 * Add badges ([`8c2f5ce`](https://github.com/Stephen-RA-King/pynnacle/commit/8c2f5ce52855e9e3d41c3eadb2c18488f4322dc9))

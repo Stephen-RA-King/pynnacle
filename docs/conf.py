@@ -7,7 +7,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "pynnacle"
-version = "1.0.2"
+version = "1.1.0"
 copyright = "2022, Stephen R A King"
 author = "Stephen R A King"
 
