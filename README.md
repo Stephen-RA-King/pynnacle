@@ -155,12 +155,11 @@ Then simply use this along with the account email address to authenticate
 
 ## Meta
 
-[![](assets/linkedin.png)](https://linkedin.com/in/stephen-k-3a4644210)
+[![](assets/linkedin.png)](https://www.linkedin.com/in/sr-king)
 [![](assets/github.png)](https://github.com/Stephen-RA-King)
-[![](assets/pypi.png)](https://pypi.org/project/pynnacle/)
+[![](assets/pypi.png)](https://pypi.org/project/pynnacle)
 [![](assets/www.png)](https://www.justpython.tech)
 [![](assets/email.png)](mailto:stephen.ra.king@gmail.com)
-[![](assets/cv.png)](https://www.justpython.tech/cv)
 
 Stephen R A King : stephen.ra.king@gmail.com
 
