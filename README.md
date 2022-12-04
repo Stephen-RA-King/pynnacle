@@ -7,7 +7,6 @@
 [![Status][status-image]][pypi-url]
 [![Python Version][python-version-image]][pypi-url]
 [![Format][format-image]][pypi-url]
-[![Requirements][requirements-status-image]][requirements-status-url]
 [![Lgtm alerts][lgtm-alerts-image]][lgtm-alerts-url]
 [![Lgtm quality][lgtm-quality-image]][lgtm-quality-url]
 [![CodeQl][codeql-image]][codeql-url]
@@ -210,8 +209,6 @@ Created with Cookiecutter template: [**cc_template**][cc_template-url] version 1
 [python-version-image]: https://img.shields.io/pypi/pyversions/pynnacle
 [readthedocs-image]: https://readthedocs.org/projects/pynnacle/badge/?version=latest
 [readthedocs-url]: https://pynnacle.readthedocs.io/en/latest/?badge=latest
-[requirements-status-image]: https://requires.io/github/Stephen-RA-King/pynnacle/requirements.svg?branch=main
-[requirements-status-url]: https://requires.io/github/Stephen-RA-King/pynnacle/requirements/?branch=main
 [status-image]: https://img.shields.io/pypi/status/pynnacle.svg
 [tests-image]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/tests.yml/badge.svg
 [tests-url]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/tests.yml
