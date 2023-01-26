@@ -7,8 +7,6 @@
 [![Status][status-image]][pypi-url]
 [![Python Version][python-version-image]][pypi-url]
 [![Format][format-image]][pypi-url]
-[![Lgtm alerts][lgtm-alerts-image]][lgtm-alerts-url]
-[![Lgtm quality][lgtm-quality-image]][lgtm-quality-url]
 [![CodeQl][codeql-image]][codeql-url]
 [![readthedocs][readthedocs-image]][readthedocs-url]
 [![pre-commit][pre-commit-image]][pre-commit-url]
