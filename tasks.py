@@ -415,6 +415,8 @@ def psr(c):
 @task
 def update(c):
     """Updates the development environment"""
+    c.run("python -m pip install --upgrade pip")
+    c.run("python -m pip install --upgrade pip-tools")
     c.run("pre-commit clean")
     c.run("pre-commit gc")
     c.run("pre-commit autoupdate")
