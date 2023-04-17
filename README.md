@@ -27,6 +27,8 @@ imported into other modules provides a clean, clutter-free interface.
 
 ## Installation
 
+---
+
 OS X & Linux:
 
 ```sh
@@ -40,6 +42,8 @@ pip install pynnacle
 ```
 
 ## Usage example
+
+---
 
 Firstly import the module
 
@@ -100,6 +104,8 @@ mailer.message_send(
 
 ## Further simplifications
 
+---
+
 ### Storing and Reusing SMTP
 
 Additional setting can be saved in the "ini" file as and when you like.
@@ -133,6 +139,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## A Note on gmail authentication
 
+---
+
 As of 30/05/2022 Google will no longer support the use of third-party apps or devices that only ask for your username and password.
 The "Less secure app access" setting has now been turned off.
 The application now has to be assigned a 16 byte code which can be configured from your account as follows:
@@ -146,11 +154,20 @@ Then simply use this along with the account email address to authenticate
 
 ## Documentation
 
-### - [**Read the Docs**](https://pynnacle.readthedocs.io/en/latest/)
+---
 
-### - [**Wiki**](https://github.com/Stephen-RA-King/pynnacle/wiki)
+[**Read the Docs**](https://pynnacle.readthedocs.io/en/latest/?)
+
+- [**Example Usage**](https://pynnacle.readthedocs.io/en/latest/example.html)
+- [**Credits**](https://pynnacle.readthedocs.io/en/latest/example.html)
+- [**Changelog**](https://pynnacle.readthedocs.io/en/latest/changelog.html)
+- [**API Reference**](https://pynnacle.readthedocs.io/en/latest/autoapi/index.html)
+
+- [**Wiki**][wiki]
 
 ## Meta
+
+---
 
 [![](assets/linkedin.png)](https://www.linkedin.com/in/sr-king)
 [![](assets/github.png)](https://github.com/Stephen-RA-King)
@@ -158,13 +175,11 @@ Then simply use this along with the account email address to authenticate
 [![](assets/www.png)](https://www.justpython.tech)
 [![](assets/email.png)](mailto:sking.github@gmail.com)
 
-Stephen R A King : stephen.ra.king@gmail.com
+Stephen R A King : sking.github@gmail.com
 
-Distributed under the MIT license. See [license][license-url] for more information.
+Distributed under the MIT license. See [![][license-image]][license-url] for more information.
 
-[https://github.com/Stephen-RA-King/pynnacle](https://github.com/Stephen-RA-King/pynnacle)
-
-Created with Cookiecutter template: [**cc_template**][cc_template-url] version 1.2.0
+Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 
 <!-- Markdown link & img dfn's -->
 
@@ -172,7 +187,7 @@ Created with Cookiecutter template: [**cc_template**][cc_template-url] version 1
 [bandit-url]: https://github.com/PyCQA/bandit
 [black-image]: https://img.shields.io/badge/code%20style-black-000000.svg
 [black-url]: https://github.com/psf/black
-[cc_template-url]: https://github.com/Stephen-RA-King/cc_template
+[pydough-url]: https://github.com/Stephen-RA-King/pydough
 [codeclimate-image]: https://api.codeclimate.com/v1/badges/7fc352185512a1dab75d/maintainability
 [codeclimate-url]: https://codeclimate.com/github/Stephen-RA-King/pynnacle/maintainability
 [codecov-image]: https://codecov.io/gh/Stephen-RA-King/pynnacle/branch/main/graph/badge.svg
