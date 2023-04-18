@@ -215,8 +215,8 @@ Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 [mypy-url]: http://mypy-lang.org/
 [pre-commit-image]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [pre-commit-url]: https://github.com/pre-commit/pre-commit
-[pre-commit.ci-image]: https://results.pre-commit.ci/badge/github/Stephen-RA-King/gitwatch/main.svg
-[pre-commit.ci-url]: https://results.pre-commit.ci/latest/github/Stephen-RA-King/gitwatch/main
+[pre-commit.ci-image]: https://results.pre-commit.ci/badge/github/Stephen-RA-King/pynnacle/main.svg
+[pre-commit.ci-url]: https://results.pre-commit.ci/latest/github/Stephen-RA-King/pynnacle/main
 [pypi-url]: https://pypi.org/project/pynnacle/
 [pypi-image]: https://img.shields.io/pypi/v/pynnacle.svg
 [python-version-image]: https://img.shields.io/pypi/pyversions/pynnacle
