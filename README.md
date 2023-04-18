@@ -7,10 +7,17 @@
 [![Status][status-image]][pypi-url]
 [![Python Version][python-version-image]][pypi-url]
 [![Format][format-image]][pypi-url]
-[![CodeQl][codeql-image]][codeql-url]
-[![readthedocs][readthedocs-image]][readthedocs-url]
+
+<!--[![tests][tests-image]][tests-url]
+[![Codecov][codecov-image]][codecov-url] -->
+
 [![pre-commit][pre-commit-image]][pre-commit-url]
 [![pre-commit.ci status][pre-commit.ci-image]][pre-commit.ci-url]
+[![CodeFactor][codefactor-image]][codefactor-url]
+[![Codeclimate][codeclimate-image]][codeclimate-url]
+[![CodeQl][codeql-image]][codeql-url]
+[![readthedocs][readthedocs-image]][readthedocs-url]
+[![Imports: isort][isort-image]][isort-url]
 [![Code style: black][black-image]][black-url]
 [![Checked with mypy][mypy-image]][mypy-url]
 [![security: bandit][bandit-image]][bandit-url]
@@ -56,7 +63,7 @@ If a service is already configured then the main class can be instantiated with 
 
 ```sh
 mailer = SendEmail(
-    service="gmail"
+    service="gmail",
     user_id="jsmith",
     user_pass="P@zzw0rd1",
 )
@@ -67,7 +74,7 @@ to the initializer e.g.:
 
 ```sh
 mailer = SendEmail(
-    service="custom"
+    service="custom",
     user_id="jsmith",
     user_pass="P@zzw0rd1",
     smtp_server="smtp.abc.com",
@@ -205,6 +212,8 @@ Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 [downloads-image]: https://static.pepy.tech/personalized-badge/pynnacle?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads
 [downloads-url]: https://pepy.tech/project/pynnacle
 [format-image]: https://img.shields.io/pypi/format/pynnacle
+[isort-image]: https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336
+[isort-url]: https://github.com/pycqa/isort/
 [lgtm-alerts-image]: https://img.shields.io/lgtm/alerts/g/Stephen-RA-King/pynnacle.svg?logo=lgtm&logoWidth=18
 [lgtm-alerts-url]: https://lgtm.com/projects/g/Stephen-RA-King/pynnacle/alerts/
 [lgtm-quality-image]: https://img.shields.io/lgtm/grade/python/g/Stephen-RA-King/pynnacle.svg?logo=lgtm&logoWidth=18
