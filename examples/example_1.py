@@ -31,11 +31,11 @@ mailer.message_send(
     recipient="thesecuremailbox@gmail.com",
     body="""Dear sir \n\nThis is another test""",
     cc=[
-        "stephen.ra.king@gmail.com",
+        "sking.github@gmail.com",
         "junkmailcomplaints@gmail.com",
     ],
     bcc=[
-        "stephen.ra.king@gmail.com",
+        "sking.github@gmail.com",
         "junkmailcomplaints@gmail.com",
     ],
     attachments=[r"example_2.py"],

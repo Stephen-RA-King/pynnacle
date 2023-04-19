@@ -12,7 +12,7 @@ __title__ = "pynnacle"
 __version__ = "1.1.1"
 __author__ = "Stephen R A King"
 __description__ = "Utiltiy wrapper class to leverage email transmission"
-__email__ = "stephen.ra.king@gmail.com"
+__email__ = "sking.github@gmail.com"
 __license__ = "MIT"
 __copyright__ = "Copyright 2022 Stephen R A King"
 

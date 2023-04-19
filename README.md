@@ -1,6 +1,6 @@
-# pynnacle
+# Pynnacle
 
-> A utility class to simplify sending emails.
+_**A utility class to simplify sending emails.**_
 
 [![PyPI][pypi-image]][pypi-url]
 [![Downloads][downloads-image]][downloads-url]
@@ -170,7 +170,7 @@ Then simply use this along with the account email address to authenticate
 - [**Changelog**](https://pynnacle.readthedocs.io/en/latest/changelog.html)
 - [**API Reference**](https://pynnacle.readthedocs.io/en/latest/autoapi/index.html)
 
-- [**Wiki**][wiki]
+[**Wiki**][wiki]
 
 ## Meta
 
@@ -182,7 +182,7 @@ Then simply use this along with the account email address to authenticate
 [![](assets/www.png)](https://www.justpython.tech)
 [![](assets/email.png)](mailto:sking.github@gmail.com)
 
-Stephen R A King : sking.github@gmail.com
+Stephen R A King : [sking.github@gmail.com](mailto:sking.github@gmail.com)
 
 Distributed under the MIT license. See [![][license-image]][license-url] for more information.
 
