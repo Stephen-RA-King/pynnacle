@@ -2,6 +2,19 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.2 (2023-04-21)
+### Fix
+* Shebang for version 3 env ([`fb90dba`](https://github.com/Stephen-RA-King/pynnacle/commit/fb90dbab9265578c104a5dda5a2c8c401b380996))
+
+### Documentation
+* Update email links ([`d14c610`](https://github.com/Stephen-RA-King/pynnacle/commit/d14c6109e534ba4734d383d77e1a3b903fa2b95f))
+* Correct code examples ([`ebcb09b`](https://github.com/Stephen-RA-King/pynnacle/commit/ebcb09b1f094686aecce68a054bd26be35749a4f))
+* Fic pre-commit.io url ([`53421b7`](https://github.com/Stephen-RA-King/pynnacle/commit/53421b71613e3da3959910f5bb53edf91908bc80))
+* Rename base cookiecutter name ([`6707287`](https://github.com/Stephen-RA-King/pynnacle/commit/67072876ea102a64202b85e719c6c886526eaf97))
+* Remove deprecated lgtm badges ([`79b44b9`](https://github.com/Stephen-RA-King/pynnacle/commit/79b44b9b419ed9bb683fcc70386581fd0ecec985))
+* Update email address ([`211a5e4`](https://github.com/Stephen-RA-King/pynnacle/commit/211a5e4af8a4a81cb758a58c8c1203089901bad7))
+* Remove requirements.io from readme ([`dae6a22`](https://github.com/Stephen-RA-King/pynnacle/commit/dae6a22cac17d2d2c6be6f583819b174307f359b))
+
 ## v1.1.1 (2022-10-08)
 
 

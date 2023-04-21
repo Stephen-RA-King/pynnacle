@@ -10,7 +10,7 @@ from importlib import resources
 import yaml  # type: ignore
 
 __title__ = "pynnacle"
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 __author__ = "Stephen R A King"
 __description__ = "Utiltiy wrapper class to leverage email transmission"
 __email__ = "sking.github@gmail.com"
