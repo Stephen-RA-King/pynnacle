@@ -86,13 +86,13 @@ colorama==0.4.6
 comm==0.1.2
     # via ipykernel
 commitizen==2.42.1
-    # via -r development.in
-coverage[toml]==7.2.1
     # via
     #   -r development.in
     #   coverage-conditional-plugin
     #   pytest-cov
 coverage-conditional-plugin==0.8.0
+    # via -r development.in
+coverage[toml]==7.2.1
     # via -r development.in
 cryptography==41.0.2
     # via secretstorage
@@ -530,6 +530,10 @@ secretstorage==3.3.3
 semver==2.13.0
     # via python-semantic-release
 send2trash==1.8.0
+    # via importlib-metadata
+
+# The following packages are considered to be unsafe in a requirements file:
+setuptools==67.4.0
     # via
     #   jupyter-server
     #   nbclassic
@@ -672,10 +676,6 @@ widgetsnbextension==4.0.5
 wrapt==1.15.0
     # via astroid
 zipp==3.15.0
-    # via importlib-metadata
-
-# The following packages are considered to be unsafe in a requirements file:
-setuptools==67.4.0
     # via
     #   nodeenv
     #   sphinxcontrib-jquery
