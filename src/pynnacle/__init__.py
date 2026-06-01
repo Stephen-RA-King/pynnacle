@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Top-level package for pynnacle."""
+
 # Core Library modules
 import configparser
 import json
