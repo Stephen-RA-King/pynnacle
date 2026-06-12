@@ -54,7 +54,7 @@ cachetools==5.3.0
     # via tox
 certifi==2022.12.7
     # via requests
-cffi==1.15.1
+cffi==2.0.0
     # via
     #   argon2-cffi-bindings
     #   cryptography
@@ -86,15 +86,15 @@ colorama==0.4.6
 comm==0.1.2
     # via ipykernel
 commitizen==2.42.1
+    # via -r development.in
+coverage[toml]==7.2.1
     # via
     #   -r development.in
     #   coverage-conditional-plugin
     #   pytest-cov
 coverage-conditional-plugin==0.8.0
     # via -r development.in
-coverage[toml]==7.2.1
-    # via -r development.in
-cryptography==42.0.7
+cryptography==46.0.7
     # via secretstorage
 debugpy==1.6.6
     # via ipykernel
@@ -537,10 +537,6 @@ secretstorage==3.3.3
 semver==2.13.0
     # via python-semantic-release
 send2trash==1.8.0
-    # via importlib-metadata
-
-# The following packages are considered to be unsafe in a requirements file:
-setuptools==67.4.0
     # via
     #   jupyter-server
     #   nbclassic
@@ -656,11 +652,12 @@ types-requests==2.28.11.15
     # via -r development.in
 types-urllib3==1.26.25.8
     # via types-requests
-typing-extensions==4.5.0
+typing-extensions==4.15.0
     # via
     #   astroid
     #   black
     #   commitizen
+    #   cryptography
     #   mypy
     #   myst-nb
     #   myst-parser
@@ -695,6 +692,10 @@ widgetsnbextension==4.0.5
 wrapt==1.15.0
     # via astroid
 zipp==3.15.0
+    # via importlib-metadata
+
+# The following packages are considered to be unsafe in a requirements file:
+setuptools==67.4.0
     # via
     #   nodeenv
     #   sphinxcontrib-jquery
