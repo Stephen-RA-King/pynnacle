@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """A utility class to simplify the sending of emails."""
+
 # Core Library modules
 import mimetypes
 import re
