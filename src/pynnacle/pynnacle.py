@@ -210,7 +210,7 @@ class SendEmail:
     def message_get(self):
         return f"""
             c = Compulsory
-            SUBJECT:(c) {self._subject },
+            SUBJECT:(c) {self._subject},
             FROM:(c)    {self._sender},
             TO:(c)      {self._recipient},
             CC:         {self._validated_cc},

@@ -7,10 +7,8 @@ _**A utility class to simplify sending emails.**_
 [![Status][status-image]][pypi-url]
 [![Python Version][python-version-image]][pypi-url]
 [![Format][format-image]][pypi-url]
-
-<!--[![tests][tests-image]][tests-url]
-[![Codecov][codecov-image]][codecov-url] -->
-
+[![tests][tests-image]][tests-url]
+[![Codecov][codecov-image]][codecov-url]
 [![pre-commit][pre-commit-image]][pre-commit-url]
 [![pre-commit.ci status][pre-commit.ci-image]][pre-commit.ci-url]
 [![CodeFactor][codefactor-image]][codefactor-url]
