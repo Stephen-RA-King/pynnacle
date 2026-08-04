@@ -12,7 +12,6 @@ _**A utility class to simplify sending emails.**_
 [![pre-commit][pre-commit-image]][pre-commit-url]
 [![pre-commit.ci status][pre-commit.ci-image]][pre-commit.ci-url]
 [![CodeFactor][codefactor-image]][codefactor-url]
-[![Codeclimate][codeclimate-image]][codeclimate-url]
 [![CodeQl][codeql-image]][codeql-url]
 [![readthedocs][readthedocs-image]][readthedocs-url]
 [![Imports: isort][isort-image]][isort-url]
@@ -21,8 +20,8 @@ _**A utility class to simplify sending emails.**_
 [![security: bandit][bandit-image]][bandit-url]
 [![Commitizen friendly][commitizen-image]][commitizen-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
-[![DeepSource][deepsource-image]][deepsource-url]
 [![license][license-image]][license-url]
+[![pydough][pydough-image]][pydough-url]
 
 Pynnacle provides a wrapper to mimetypes, smtplib and email.message libraries to provide a simplified facade
 interface to make sending emails as simple as possible. It abstracts away all the low level details and when
@@ -184,7 +183,7 @@ Stephen R A King : [sking.github@gmail.com](mailto:sking.github@gmail.com)
 
 Distributed under the MIT license. See [![][license-image]][license-url] for more information.
 
-Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
+Created with Cookiecutter template: [![pydough][pydough-image]][pydough-url] version 1.2.1
 
 <!-- Markdown link & img dfn's -->
 
@@ -192,7 +191,6 @@ Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 [bandit-url]: https://github.com/PyCQA/bandit
 [black-image]: https://img.shields.io/badge/code%20style-black-000000.svg
 [black-url]: https://github.com/psf/black
-[pydough-url]: https://github.com/Stephen-RA-King/pydough
 [codeclimate-image]: https://api.codeclimate.com/v1/badges/7fc352185512a1dab75d/maintainability
 [codeclimate-url]: https://codeclimate.com/github/Stephen-RA-King/pynnacle/maintainability
 [codecov-image]: https://codecov.io/gh/Stephen-RA-King/pynnacle/branch/main/graph/badge.svg
@@ -205,8 +203,6 @@ Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square
 [conventional-commits-url]: https://conventionalcommits.org
-[deepsource-image]: https://static.deepsource.io/deepsource-badge-light-mini.svg
-[deepsource-url]: https://deepsource.io/gh/Stephen-RA-King/pynnacle/?ref=repository-badge
 [downloads-image]: https://static.pepy.tech/personalized-badge/pynnacle?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads
 [downloads-url]: https://pepy.tech/project/pynnacle
 [format-image]: https://img.shields.io/pypi/format/pynnacle
@@ -224,6 +220,8 @@ Created with Cookiecutter template: [**pydough**][pydough-url] version 1.2.1
 [pre-commit-url]: https://github.com/pre-commit/pre-commit
 [pre-commit.ci-image]: https://results.pre-commit.ci/badge/github/Stephen-RA-King/pynnacle/main.svg
 [pre-commit.ci-url]: https://results.pre-commit.ci/latest/github/Stephen-RA-King/pynnacle/main
+[pydough-image]: https://img.shields.io/badge/Cookiecutter-pydough-orange?logo=cookiecutter
+[pydough-url]: https://github.com/Stephen-RA-King/pydough
 [pypi-url]: https://pypi.org/project/pynnacle/
 [pypi-image]: https://img.shields.io/pypi/v/pynnacle.svg
 [python-version-image]: https://img.shields.io/pypi/pyversions/pynnacle
