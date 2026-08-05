@@ -10,7 +10,7 @@ anyio==4.14.2
     # via
     #   httpx
     #   jupyter-server
-argcomplete==3.7.0
+argcomplete==3.7.1
     # via commitizen
 argon2-cffi==25.1.0
     # via jupyter-server
@@ -165,7 +165,7 @@ fqdn==1.5.1
     # via jsonschema
 gitdb==4.0.12
     # via gitpython
-gitpython==3.1.57
+gitpython==3.1.58
     # via python-semantic-release
 greenlet==3.5.4
     # via sqlalchemy
@@ -372,7 +372,7 @@ notebook-shim==0.2.4
     # via
     #   jupyterlab
     #   notebook
-packaging==26.2
+packaging==26.3
     # via
     #   black
     #   build
