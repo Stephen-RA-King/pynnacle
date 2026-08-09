@@ -1,11 +1,21 @@
+exclude: |
+  (?x)^(
+      docs/conf.py|
+      docs/example.ipynb|
+      examples/[\w]*.py|
+      post_installation.py|
+      reports/[\w]*|
+      tasks.py|
+      tests/[\w]*.py|
+      tools/[\w]*.py|
+  )$
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: check-ast
       - id: check-added-large-files
         args: [--maxkb=500]
-      - id: fix-byte-order-marker
+      - id: check-ast
       - id: check-case-conflict
       - id: check-json
       - id: check-merge-conflict
@@ -16,6 +26,10 @@ repos:
       - id: debug-statements
       - id: detect-private-key
       - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: pretty-format-json
       - id: requirements-txt-fixer
       - id: trailing-whitespace
 
@@ -25,20 +39,8 @@ repos:
       - id: commitizen
         stages: [commit-msg]
 
-  - repo: https://github.com/MartinThoma/check-pip-compile
-    rev: 0.1.1
-    hooks:
-      - id: check-pip-compile
-        args:
-          [
-            "requirements/base.in",
-            "requirements/production.in",
-            "requirements/development.in",
-            "requirements/test.in",
-          ]
-
   - repo: https://github.com/pycqa/isort
-    rev: 9.0.0b1
+    rev: 9.0.0b2
     hooks:
       - id: isort
         args: ["--filter-files"]
@@ -53,23 +55,51 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          #          - flake8-bugbear
-          #          - flake8-comprehensions
-          #          - flake8-eradicate
+          - flake8-bandit
+          - flake8-bugbear
+          - flake8-comprehensions
+          - flake8-docstrings
+          - flake8-eradicate
+          - flake8-html
+          - Flake8-pyproject
+          - flake8-pytest-style
           - flake8-simplify
+          - pep8-naming
         args: ["--ignore=E800,F842,F841,W503"]
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.21.2
     hooks:
       - id: pyupgrade
-        args: [--py39]
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.3.0
     hooks:
-      - id: prettier
-        stages: [pre-commit]
+      - id: mypy
+        alias: mypy
+        args:
+          [
+            --ignore-missing-imports,
+            --disallow-untyped-defs,
+            --no-warn-unused-ignores,
+            --install-types,
+            --html-report,
+            "reports/mypy",
+            --cache-dir,
+            "cache/.mypy_cache",
+          ]
+        additional_dependencies:
+          - types-dataclasses
+          - lxml
+
+          - types-beautifulsoup4
+          - types-html5lib
+          - types-python-dateutil
+          - types-PyYAML
+          - types-requests
+          - types-toml
+          - types-urllib3
 
   - repo: https://github.com/PyCQA/bandit
     rev: 1.9.4
@@ -77,4 +107,16 @@ repos:
       - id: bandit
         args:
           - -s
-          - B101,B105,B404,B603,B607
+          - B101,B301,B403,B404,B603,B607
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.25
+    hooks:
+      - id: validate-pyproject
+        additional_dependencies:
+          - validate-pyproject[all]
+          - validate-pyproject-schema-store[all]
+
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes

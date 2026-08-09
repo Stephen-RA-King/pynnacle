@@ -1,5 +1,4 @@
 ```{include} ../README.md
-
 ```
 
 ```{toctree}
@@ -7,7 +6,6 @@
 :hidden:
 
 
-example.ipynb
 authors.md
 changelog.md
 autoapi/index

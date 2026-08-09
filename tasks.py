@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
 """
 Tasks for maintaining the project.
 
 Execute 'invoke --list' for guidance on using Invoke
 """
-
 # Core Library modules
 import logging.config
 import shutil
@@ -12,7 +12,7 @@ from pathlib import Path
 
 # Third party modules
 import yaml  # type: ignore
-from invoke import call, task
+from invoke import task, call
 from jinja2 import Template
 
 ROOT_DIR = Path(__file__).parent
@@ -25,7 +25,7 @@ DOCS_INDEX = "".join(['"', str(ROOT_DIR / "docs" / "_build" / "index.html"), '"'
 LOG_DIR = ROOT_DIR.joinpath("logs")
 TEST_DIR = ROOT_DIR.joinpath("tests")
 SRC_DIR = ROOT_DIR.joinpath("src")
-PKG_DIR = SRC_DIR.joinpath("piptools_sync")
+PKG_DIR = SRC_DIR.joinpath("pynnacle")
 PYTHON_FILES_ALL = list(ROOT_DIR.rglob("*.py"))
 PYTHON_FILES_ALL.remove(ROOT_DIR / "tasks.py")
 PYTHON_FILES_ALL_STR = ""
@@ -80,22 +80,22 @@ LOGGING_CONFIG = Template(LOGGING_CONFIG_TEMPLATE).render(
 logging.config.dictConfig(yaml.safe_load(LOGGING_CONFIG))
 logger = logging.getLogger("main")
 
-logger.debug(f"Total python files: {len(PYTHON_FILES_ALL)} ")
+logger.debug("Total python files: %s", len(PYTHON_FILES_ALL))
 for file in PYTHON_FILES_ALL:
-    logger.debug(f"{file}")
-logger.debug(f"src python files: {len(PYTHON_FILES_SRC)}")
+    logger.debug("%s", file)
+logger.debug("src python files: %s", len(PYTHON_FILES_SRC))
 for file in PYTHON_FILES_SRC:
-    logger.debug(f"{file}")
+    logger.debug("%s", file)
 
 
 def _delete_director(items_to_delete):
     """Utility function to delete files or directories."""
     for item in items_to_delete:
         if item.is_dir():
-            logger.debug(f"Deleting Directory: {item}")
+            logger.debug("Deleting Directory: %s", item)
             shutil.rmtree(item, ignore_errors=True)
         elif item.is_file():
-            logger.debug(f"Deleting File: {item}")
+            logger.debug("Deleting File: %s", item)
             Path.unlink(item, missing_ok=True)
         else:
             raise ValueError(f"{item} is not a directory or a file")
@@ -104,13 +104,13 @@ def _delete_director(items_to_delete):
 def _finder(directory, item, exclusions):
     """Utility function to generate a Path list of files based on globs."""
     item_list = list(directory.rglob(item))
-    logger.debug(f"for {item}: Found: {item_list}")
+    logger.debug("for %s : Found: %s", item, item_list)
     for exc in exclusions:
-        logger.debug(f"removing exclusion: {exc}")
+        logger.debug("removing exclusion: %s", exc)
         if exc in item_list:
             item_list.remove(exc)
     if item_list:
-        logger.debug(f"Items to process: {item_list}")
+        logger.debug("Items to process: %s", item_list)
         _delete_director(item_list)
 
 
@@ -137,7 +137,7 @@ def _clean_build():
     ]
     # specify pathlib objects to exclude from deletion (can be directories of files)
     excludes = [
-        SRC_DIR / "piptools_sync.egg-info/",
+        SRC_DIR / "pynnacle.egg-info/",
     ]
     for pattern in patterns:
         _finder(ROOT_DIR, pattern, excludes)
@@ -146,14 +146,19 @@ def _clean_build():
 def _clean_test():
     """Clean up test artifacts."""
     patterns = [
+        "assets",
+        "coverage",
+        "mypy",
         ".pytest_cache",
         "htmlcov",
         ".coverage",
         ".tox",
         "coverage.xml",
-        "pytest-report.html",
+        "coverage.html",
+        "pytest.html",
+        "coverage.html",
     ]
-    excludes = []
+    excludes = [ROOT_DIR / "assets", ROOT_DIR / "docs" / "assets"]
     for pattern in patterns:
         _finder(ROOT_DIR, pattern, excludes)
 
@@ -278,7 +283,6 @@ def lint_flake8(c, open_browser=False, all_files=False):
     else:
         c.run(f"flake8 --format=html --htmldir=flake-report {PYTHON_FILES_SRC_STR}")
     if open_browser:
-        # report_path = (ROOT_DIR / "flake-report" / "index.html").absolute().as_uri()
         report_path = "".join(['"', str(ROOT_DIR / "flake-report" / "index.html"), '"'])
         webbrowser.open(report_path)
 
@@ -358,8 +362,8 @@ def tests(c, open_browser=False):
     _clean_test()
     print(TEST_DIR)
     c.run(
-        f'pytest "{str(TEST_DIR)}" --cov=piptools_sync --cov-report=html'
-        f" --html=pytest-report.html -ra"
+        f'pytest "{str(TEST_DIR)}" --cov=pynnacle --cov-report=html'
+        f' --html=pytest-report.html -ra'
     )
     if open_browser:
         pytest_path = "".join(['"', str(ROOT_DIR / "pytest-report.html"), '"'])
@@ -416,8 +420,6 @@ def psr(c):
 @task
 def update(c):
     """Updates the development environment"""
-    c.run("python -m pip install --upgrade pip")
-    c.run("python -m pip install --upgrade pip-tools")
     c.run("pre-commit clean")
     c.run("pre-commit gc")
     c.run("pre-commit autoupdate")

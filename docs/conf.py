@@ -7,8 +7,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "pynnacle"
-version = "1.1.2"
-copyright = "2022, Stephen R A King"
+version = "0.0.0"
+copyright = "2026, Stephen R A King"
 author = "Stephen R A King"
 
 # -- General configuration ---------------------------------------------------
@@ -17,7 +17,7 @@ author = "Stephen R A King"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "myst_nb",
+    "myst_parser",
     "autoapi.extension",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
