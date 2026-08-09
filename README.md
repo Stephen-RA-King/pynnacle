@@ -197,8 +197,8 @@ Created with Cookiecutter template: [![pydough][pydough-image]][pydough-url] ver
 [codecov-url]: https://app.codecov.io/gh/Stephen-RA-King/pynnacle
 [codefactor-image]: https://www.codefactor.io/repository/github/Stephen-RA-King/pynnacle/badge
 [codefactor-url]: https://www.codefactor.io/repository/github/Stephen-RA-King/pynnacle
-[codeql-image]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/codeql-analysis.yml/badge.svg
-[codeql-url]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/codeql-analysis.yml
+[codeql-image]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/codeql.yml/badge.svg
+[codeql-url]: https://github.com/Stephen-RA-King/pynnacle/actions/workflows/codeql.yml
 [commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square
