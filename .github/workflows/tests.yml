@@ -1,6 +1,6 @@
 # https://docs.github.com/en/actions
 # https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-name: test
+name: tests
 
 on:
   push:
@@ -56,5 +56,6 @@ jobs:
       # Step 8. Use Codecov to track coverage
       - uses: codecov/codecov-action@v7
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml # coverage report
           fail_build_if_error: true # terminate workflow if there's an error
